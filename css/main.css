@@ -205,7 +205,6 @@ ul {
 
 .portfolio ul li:hover {
 	opacity: 1;
-	cursor: pointer;
 }
 
 .portfolio ul .karma,
