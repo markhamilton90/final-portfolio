@@ -12,32 +12,54 @@ body {
 	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 }
 
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/*------------------------------ 
+------ NAVIGATION BARS --------- 
+------------------------------*/
+
 .top-nav {
 	text-align: right;
 	padding: .8em 0;
 	text-transform: uppercase;
 	letter-spacing: .125em;
 	background-color: white;
-	border-bottom: 1px solid black;
 	color: black;
 	font-weight: 300;
 	opacity: .89;
 	-webkit-transition: all .3s linear;
 }
 
-.top-nav:hover {
-	background-color: black;
+/*.top-nav:hover {
+	background-color: #333;
 	color: white;
+}*/
+
+.top-nav ul {
+	margin: 0.3rem;
+	padding: 0 10px;
 }
 
-.top-nav ul li.nav-li.left {
+.top-nav ul li {
+	padding-bottom: 0.2em;
+}
+
+.top-nav ul li:hover {
+	cursor: pointer;
+}
+
+.top-nav ul li.left {
 	float: left;
 	margin-left: 1.5rem;
-}
-
-ul {
-	padding: 0 10px;
-	list-style-type: none;
 }
 
 .top-nav ul li,
@@ -52,49 +74,47 @@ ul {
 	color: inherit;
 }
 
-.top-nav ul {
-	margin: 0.3rem;
+.top-nav .left {
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
-.top-nav ul li {
-	padding-bottom: 0.2em;
-}
-
-.top-nav ul li:hover {
-	cursor: pointer;
-}
-
-.active {
-	border-bottom: 2px solid white;
-}
-
-.top-nav ul li:hover {
-	
-}
-
-.top-nav ul .nav-li,
-.bottom-nav ul .nav-li {
+.top-nav ul li,
+.bottom-nav ul li {
 	margin-right: 1.5rem;
+}
+
+.top-nav ul li:last-child {
+	margin-right: 0;
+}
+
+/*------------------------------ 
+------ HEADING/INTRO TEXT ------
+------------------------------*/
+
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .about {
 	padding: .5em 0;
-	margin: 6rem auto 1rem;
 	font-family: 'Antic Slab', 'Helvetica Neue', Arial, sans-serif;
 	background-color: #2ecc71;
 	color: white;
 	text-align: center;
 }
 
-.about > h2 {
+.about h2 {
 	font-size: 2em;
 }
 
-.about > p {
+.about p {
 	font-size: 1.35em;
 }
 
-.about > p > span {
+.about p > span {
 	padding-bottom: 3px;
 	border-bottom: 2px solid white;
 	cursor: pointer;
@@ -107,36 +127,26 @@ ul {
 	border-bottom: 2px solid white;
 }
 
-.logo {
-	background-clip: border-box;
-	background-size: cover;
+.intro {
 	text-align: center;
-	height: 25rem;
-	max-width: 100%;
+	height: 31rem;
 }
 
-.logo h1 {
+.intro h1 {
 	margin: 0 auto;
-	color: #18150e;
-	padding: 1.75em .7rem .9rem;
+	padding: 1.75em 0 .9rem;
 	border-radius: 10px;
 	font-size: 5rem;
-	font-family: 'Lato', 'Montserrat', Arial, sans-serif;
+	font-family: 'Lato', Arial, sans-serif;
 	font-weight: 600;
 }
 
-.logo h2 {
-	margin: 0;
+.intro h2 {
+	margin: 0 auto;
 	padding: .9rem;
 	text-transform: uppercase;
-	display: inline-block;
-    color: #000000;
     font-size: 2.5rem;
-    font-family: 'Lato', 'PT Sans', 'Ubuntu', 'Helvetica Neue', Arial, serif;
-}
-
-.logo h2:first-child {
-	padding-top: 2em;
+    font-family: 'Lato', Arial, serif;
 }
 
 #contact-info p {
@@ -148,7 +158,7 @@ ul {
 	padding-top: 2em;
 }
 
-.logo hr {
+.intro hr {
 	width: 4.5rem;
 	border: 2px solid black;
 	text-align: center;
@@ -185,10 +195,12 @@ ul {
 	padding-left: 1em;
 }
 
+/*------------------------------ 
+---- PORTFOLIO INDEX PAGE  ----- 
+------------------------------*/
+
 .portfolio {
-	width: 90%;
-	padding: 0 15px;
-	margin: 0 auto;
+	padding: 4em 0 6em;
 	text-align: center;
 }
 
@@ -200,23 +212,16 @@ ul {
 	background-color: #adadad;
 	background-clip: content-box;
 	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 	opacity: .9;
+	-webkit-transition: all .5s;
 }
 
 .portfolio ul li:hover {
+	/*background-size: 170%;*/
 	opacity: 1;
-}
-
-.portfolio ul .karma,
-.portfolio ul .nyt, 
-.portfolio ul .pokedex,
-.portfolio ul .hot-or-cold,
-.portfolio ul .shopping,
-.portfolio ul .soccer-quiz {
-	background-clip: content-box;
-	background-position: center bottom;
-	background-size: cover;
-	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 .portfolio hr {
@@ -250,29 +255,27 @@ ul {
 	background-image: url(../img/soccer-quiz.png);
 } 
 
-.portfolio {
-	clear: both;
-	margin: 6rem auto 0;
-}
-
 .portfolio .portfolio-label {
+	display: inline-block;
 	font-family: 'Lato', Arial, serif;
-	font-weight: 400;	
-	margin: 6rem 0 1rem;
+	font-weight: 400;
 }
 
-.portfolio div {
+.wrapper .image {
 	display: inline-block;
 	width: 33%;
+	min-width: 270px;
 	height: 16rem;
 }
 
-.portfolio div p {
+.portfolio .wrapper p {
 	margin: 0;
 	font-family: 'Lato', 'Helvetica Neue', Arial, serif;
 }
 
-/* --- About Me Page --- */
+/*------------------------------ 
+------ ABOUT ME PAGE ----------- 
+------------------------------*/
 
 .introduction {
 	text-align: center;
@@ -294,6 +297,23 @@ ul {
 	font-weight: 600;
 }
 
+#header-text > h1.contact-page {
+	padding-bottom: .5em;
+}
+
+.contact-text {
+	font-family: 'Antic Slab', serif;
+	font-size: 1.35em;
+	line-height: 1.6em;
+	margin: 0 auto 6em;
+	width: 700px;
+}
+
+.contact-text a {
+	text-decoration: none;
+	color: #2ecc71;
+}
+
 .about-me, .favorites {
 	display: inline-block;
 	vertical-align: top;
@@ -303,7 +323,7 @@ ul {
 	width: 50%;
 	padding-right: 20px;
 	font-family: 'Antic Slab';
-	font-size: 1.35em;
+	font-size: 1.3em;
 	text-align: left;
 }
 
@@ -324,6 +344,7 @@ ul {
 
 .favorites {
 	width: 35%;
+	min-width: 356.297px;
 	padding-right: 40px;
 	text-align: left;
 	text-transform: uppercase;
@@ -365,10 +386,12 @@ ul {
 	list-style-type: circle;
 }
 
-/* --- Portfolio Page--- */
+/*------------------------------ 
+------ PORTFOLIO PAGE ---------- 
+------------------------------*/
 
 .sample-portfolio {
-	margin: 5em auto 9em;
+	margin: 2em auto 9em;
 	width: 90%;
 }
 
@@ -391,7 +414,7 @@ ul {
 }
 
 .descript h2 {
-	margin-bottom: 1.2em;
+	margin-bottom: 12px;
 	font-weight: 500;
 	font-size: 1.5em;
 }
@@ -404,11 +427,11 @@ ul {
 
 .summary div.info {
 	display: block;
-	margin: 1em auto 0;
+	margin: 0 auto;
 }
 
 .info div {
-	padding: 0 20px;
+	padding: 0 40px 0 20px;
 }
 
 .info div:first-child {
@@ -416,13 +439,13 @@ ul {
 }
 
 .info div:last-child {
-	padding: 0 0 0 20px;
+	padding: 0;
 }
 
 .summary div {
 	display: inline-block;
 	vertical-align: top;
-	margin: 0 auto;
+	margin: 1em auto 0;
 }
 
 .summary h2 {
@@ -433,11 +456,12 @@ ul {
 	margin: 0 auto;
 }
 
-.summary li, .summary p {
+.summary li, 
+.summary p {
 	margin-top: .5em;
 	display: inline-block;
 	font-family: 'Lato';
-	font-size: 1.5em;
+	font-size: 1.23em;
 	font-weight: 300;
 }
 
@@ -475,14 +499,13 @@ img {
 }
 
 
-/* ----------------- 
------- FOOTER ------ 
---------------------*/
+/*------------------------------ 
+----------- FOOTER ------------- 
+------------------------------*/
 
 .social {
 	padding: 1em 0;
-	margin: 3rem 0 0;
-	background-color: #000;
+	background-color: #333;
 	color: white;
 	text-align: center;
 }
@@ -514,7 +537,7 @@ ul.icons {
 	margin: 0 0 1.5rem;
 	color: #fff;
 	font-family: 'Lato', 'Helvetica Neue', Arial, serif;
-	font-size: 1rem;
+	font-size: .9rem;
 }
 
 .social a {
@@ -548,6 +571,181 @@ ul.icons {
 
 .bottom-nav p:first-child {
 	padding: 0 20px 0 0;
+}
+
+/*------------------------------ 
+------ INTERACTION STYLES ------ 
+------------------------------*/
+
+.underline {
+	position: relative;
+}
+
+.underline:after {
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 1px;
+	left: 0;
+	bottom: -10px;
+	content: "";
+	background-color: #222;
+	transition: width .2s;
+}
+
+.underline:hover:after {
+	width: 100%;
+}
+
+/*------------------------------ 
+------ RESPONSIVE DESIGN ------- 
+------------------------------*/
+
+@media (max-width: 955px) {
+	.portfolio div {
+		width: 50%;
+	}
+}
+
+@media (max-width: 870px) {
+	.preview {
+		width: 92%;
+		margin: 0 auto;	
+	}
+
+	.descript:not(.descript:last-child) {
+		margin: 0 auto 5em;
+		text-transform: none;
+	}
+
+	.descript > h2 {
+		font-size: 1.2em;
+		text-align: center;
+		margin-bottom: 2em;
+	}
+
+	.summary {
+		display: none;
+	}
+}
+
+@media (max-width: 719px) {
+	.skills ul {
+		position: relative;
+		left: 20px;
+		padding: 0;
+	}
+
+	.about-me {
+		width: 90%;
+	}
+
+	.about-me h3 {
+		margin-top: 2em;
+		text-align: center;
+	}
+
+	.about-me p {
+		font-size: .9em;
+	}
+
+	.contact-text {
+		width: 90%;
+		font-size: 1.1em;
+	}
+
+	#header-text .contact-page {
+		font-size: 3.5em;
+	}
+}
+
+@media (max-width: 680px) {
+	.top-nav ul li.left {
+		float: none;
+		display: block;
+		margin: 0 auto .8em;
+		text-align: center;
+	}
+
+	.top-nav ul {
+		text-align: center;
+	}
+
+	.underline:after {
+		display: none;
+	}
+
+	.intro {
+		height: 23rem;
+	}
+
+	.intro h1 {
+		padding-top: .8em;
+	}
+}
+
+@media (max-width: 655px) {
+
+	.portfolio div {
+		width: 22em;
+	}
+}
+
+@media (max-width: 536px) {
+	.bottom-nav p,
+	.bottom-nav p:first-child,
+	.bottom-nav ul li {
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin: 1em auto;
+	}
+
+	.bottom-nav ul li {
+		margin: 1em auto;
+		font-size: .9rem;
+	}
+
+	.icons li {
+		width: 2.3rem;
+		height: 2.3rem;
+		padding-top: 6px;
+	}
+}
+
+@media (max-width: 460px) {
+
+	.top-nav ul li:not(.left) {
+		font-size: .8em;
+	}
+
+	#header-text > h1,
+	.intro > h1,
+	.intro > h2 {
+		font-size: 3.5em;
+		padding-bottom: 1em;
+	}
+
+	.favorites,
+	.skills {
+		display: none;
+	}
+
+	.intro > h1 {
+		padding-bottom: .35em;
+	}
+
+	.intro > h2 {
+		font-size: 1.7em;
+	}
+
+	.about h2 {
+		font-size: 1.7em;
+	}
+
+	.about p {
+		font-size: 1em;
+	}
 }
 
 
