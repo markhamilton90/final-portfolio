@@ -206,9 +206,8 @@ a {
 
 .portfolio ul li {
 	width: 100%;
-	height: 16rem;
 	padding: 0.5em;
-	margin: 0.4rem 0 0;
+	height: 16rem;
 	background-color: #adadad;
 	background-clip: content-box;
 	background-size: cover;
@@ -265,7 +264,6 @@ a {
 	display: inline-block;
 	width: 33%;
 	min-width: 270px;
-	height: 16rem;
 }
 
 .portfolio .wrapper p {
@@ -680,7 +678,12 @@ ul.icons {
 	}
 
 	.intro h1 {
-		padding-top: .8em;
+		padding-top: 1.2em;
+		font-size: 3.5em;
+	}
+
+	.intro h2 {
+		font-size: 2rem;
 	}
 }
 
@@ -731,8 +734,17 @@ ul.icons {
 		display: none;
 	}
 
+	.intro {
+		height: 18rem;
+	}
+
 	.intro > h1 {
+		font-size: 2.5em;
 		padding-bottom: .35em;
+	}
+
+	.intro hr {
+		border: 1px solid black;
 	}
 
 	.intro > h2 {
